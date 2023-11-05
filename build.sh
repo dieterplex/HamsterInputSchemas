@@ -5,8 +5,8 @@ set -e
 WORK=`pwd`
 
 # 下载已编译过的rimelib
-rime_version=1.8.5
-rime_git_hash=08dd95f
+rime_version=1.9.0
+rime_git_hash=a608767
 
 if [[ ! -d .deps ]] 
 then
@@ -182,7 +182,7 @@ popd > /dev/null
 
 
 # copy
-cp -R SharedSupport/*.yaml ${DST_PATH}/ 
+cp -R SharedSupport/*.yaml ${DST_PATH}/ || true  # ignore if no files to copy
 
 # TODO: 提前编译
 # export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:$PWD/.deps/dist/lib
