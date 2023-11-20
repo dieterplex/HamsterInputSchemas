@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # encoding: utf-8
-set -e
+set -ex
 
 WORK=`pwd`
 
@@ -76,3 +76,6 @@ rm -rf $OUTPUT/.$input_scheme_name && \
 
 # copy
 cp -R $OUTPUT/*.zip ${DST_PATH}/ 
+
+# 压缩输入方案
+zip -r SharedSupport.zip ${DST_PATH}
